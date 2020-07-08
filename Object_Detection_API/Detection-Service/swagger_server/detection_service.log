@@ -1,0 +1,122 @@
+2020-01-08 15:21:46,332-_handle_add_operation_error-MainThread-ERROR-Failed to add operation for POST /detection
+2020-01-08 15:22:05,627-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 15:28:46,589-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 15:29:06,643-detection_post-Thread-1-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 15:29:08,864-detection_post-Thread-1-ERROR-An Unexpected Error happened. 
+Traceback (most recent call last):
+  File "/home/saman/python-projects/Object_Detection_API/Detection-Service/swagger_server/controllers/default_controller.py", line 69, in detection_post
+    results_class = detect_resnet(model_cls, image0s)
+  File "/home/saman/python-projects/Object_Detection_API/Library/classification_network/detector.py", line 26, in detect_resnet
+    classes = load_classes(parse_data_cfg(DetectionNetwork.return_config()['classes'])['names_'+str(network_id)])
+NameError: name 'network_id' is not defined
+2020-01-08 15:29:08,865-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 15:29:08] "POST /detection HTTP/1.1" 500 -
+2020-01-08 15:33:36,162-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 15:33:46,121-detection_post-Thread-1-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 15:33:46,490-detection_post-Thread-1-ERROR-An Unexpected Error happened. 
+Traceback (most recent call last):
+  File "/home/saman/python-projects/Object_Detection_API/Detection-Service/swagger_server/controllers/default_controller.py", line 69, in detection_post
+    results_class = detect_resnet(model_cls, image0s, network_id)
+  File "/home/saman/python-projects/Object_Detection_API/Library/classification_network/detector.py", line 28, in detect_resnet
+    for idx in len(classes_all):
+TypeError: 'int' object is not iterable
+2020-01-08 15:33:46,492-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 15:33:46] "POST /detection HTTP/1.1" 500 -
+2020-01-08 15:36:02,543-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 15:36:13,314-detection_post-Thread-1-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 15:36:15,765-detection_post-Thread-1-ERROR-An Unexpected Error happened. 
+Traceback (most recent call last):
+  File "/home/saman/python-projects/Object_Detection_API/Detection-Service/swagger_server/controllers/default_controller.py", line 71, in detection_post
+    for rslt in result_class:
+NameError: name 'result_class' is not defined
+2020-01-08 15:36:15,767-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 15:36:15] "POST /detection HTTP/1.1" 500 -
+2020-01-08 15:37:10,395-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 15:37:15,391-detection_post-Thread-1-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 15:37:16,950-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 15:37:16,951-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 15:37:16] "POST /detection HTTP/1.1" 200 -
+2020-01-08 15:40:43,225-detection_post-Thread-2-INFO-Detection method with mode: 2 and Network_id: 1 requested.
+2020-01-08 15:41:01,441-detection_post-Thread-2-INFO-Detection request is completed (network_id = 1).
+2020-01-08 15:41:01,442-_log-Thread-2-INFO-127.0.0.1 - - [08/Jan/2020 15:41:01] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:08:55,718-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:09:18,903-detection_post-Thread-1-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 16:09:22,335-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:09:22,337-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:09:22] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:10:41,292-detection_post-Thread-2-INFO-Detection method with mode: 2 and Network_id: 1 requested.
+2020-01-08 16:10:56,920-detection_post-Thread-2-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:10:56,921-_log-Thread-2-INFO-127.0.0.1 - - [08/Jan/2020 16:10:56] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:12:10,569-detection_post-Thread-3-INFO-Detection method with mode: 3 and Network_id: 1 requested.
+2020-01-08 16:12:17,468-detection_post-Thread-3-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:12:17,469-_log-Thread-3-INFO-127.0.0.1 - - [08/Jan/2020 16:12:17] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:13:24,072-detection_post-Thread-4-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:13:25,170-detection_post-Thread-4-ERROR-An Unexpected Error happened. 
+Traceback (most recent call last):
+  File "/home/saman/python-projects/Object_Detection_API/Detection-Service/swagger_server/controllers/default_controller.py", line 155, in detection_post
+    for i, det in enumerate(results_class['classes']):
+TypeError: list indices must be integers or slices, not str
+2020-01-08 16:13:25,171-_log-Thread-4-INFO-127.0.0.1 - - [08/Jan/2020 16:13:25] "POST /detection HTTP/1.1" 500 -
+2020-01-08 16:15:33,017-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:15:39,161-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:15:42,282-detection_post-Thread-1-ERROR-An Unexpected Error happened. 
+Traceback (most recent call last):
+  File "/home/saman/python-projects/Object_Detection_API/Detection-Service/swagger_server/controllers/default_controller.py", line 159, in detection_post
+    images0s_copy.append(image0s[i])
+NameError: name 'images0s_copy' is not defined
+2020-01-08 16:15:42,283-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:15:42] "POST /detection HTTP/1.1" 500 -
+2020-01-08 16:16:52,342-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:16:56,018-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:17:12,319-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:17:12,320-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:17:12] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:21:02,709-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:21:08,343-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:21:14,914-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:21:14,916-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:21:14] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:27:21,298-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:27:28,421-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:27:34,992-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:27:34,993-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:27:34] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:29:11,874-detection_post-Thread-2-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 16:29:13,278-detection_post-Thread-2-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:29:13,279-_log-Thread-2-INFO-127.0.0.1 - - [08/Jan/2020 16:29:13] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:29:20,264-detection_post-Thread-3-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 16:29:21,360-detection_post-Thread-3-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:29:21,361-_log-Thread-3-INFO-127.0.0.1 - - [08/Jan/2020 16:29:21] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:30:22,561-detection_post-Thread-4-INFO-Detection method with mode: 2 and Network_id: 1 requested.
+2020-01-08 16:30:28,468-detection_post-Thread-4-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:30:28,527-_log-Thread-4-INFO-127.0.0.1 - - [08/Jan/2020 16:30:28] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:31:42,830-detection_post-Thread-5-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:31:48,327-detection_post-Thread-5-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:31:48,327-_log-Thread-5-INFO-127.0.0.1 - - [08/Jan/2020 16:31:48] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:42:57,508-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:43:04,757-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:43:21,168-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:43:21,169-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:43:21] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:44:21,016-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 16:44:28,752-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:44:35,321-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:44:35,322-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 16:44:35] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:45:21,515-detection_post-Thread-2-INFO-Detection method with mode: 1 and Network_id: 1 requested.
+2020-01-08 16:45:22,587-detection_post-Thread-2-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:45:22,587-_log-Thread-2-INFO-127.0.0.1 - - [08/Jan/2020 16:45:22] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:45:42,000-detection_post-Thread-3-INFO-Detection method with mode: 2 and Network_id: 1 requested.
+2020-01-08 16:45:48,418-detection_post-Thread-3-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:45:48,611-_log-Thread-3-INFO-127.0.0.1 - - [08/Jan/2020 16:45:48] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:46:31,477-detection_post-Thread-4-INFO-Detection method with mode: 3 and Network_id: 1 requested.
+2020-01-08 16:46:38,494-detection_post-Thread-4-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:46:38,495-_log-Thread-4-INFO-127.0.0.1 - - [08/Jan/2020 16:46:38] "POST /detection HTTP/1.1" 200 -
+2020-01-08 16:47:08,039-detection_post-Thread-5-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 16:47:13,271-detection_post-Thread-5-INFO-Detection request is completed (network_id = 1).
+2020-01-08 16:47:13,272-_log-Thread-5-INFO-127.0.0.1 - - [08/Jan/2020 16:47:13] "POST /detection HTTP/1.1" 200 -
+2020-01-08 17:26:24,560-_log-MainThread-INFO- * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+2020-01-08 17:26:37,315-detection_post-Thread-1-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 17:26:54,863-detection_post-Thread-1-INFO-Detection request is completed (network_id = 1).
+2020-01-08 17:26:54,864-_log-Thread-1-INFO-127.0.0.1 - - [08/Jan/2020 17:26:54] "POST /detection HTTP/1.1" 200 -
+2020-01-08 17:28:42,093-detection_post-Thread-2-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 17:28:47,109-detection_post-Thread-2-INFO-Detection request is completed (network_id = 1).
+2020-01-08 17:28:47,110-_log-Thread-2-INFO-127.0.0.1 - - [08/Jan/2020 17:28:47] "POST /detection HTTP/1.1" 200 -
+2020-01-08 17:29:51,068-detection_post-Thread-3-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 17:29:56,131-detection_post-Thread-3-INFO-Detection request is completed (network_id = 1).
+2020-01-08 17:29:56,132-_log-Thread-3-INFO-127.0.0.1 - - [08/Jan/2020 17:29:56] "POST /detection HTTP/1.1" 200 -
+2020-01-08 17:30:49,740-detection_post-Thread-4-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 17:30:54,692-detection_post-Thread-4-INFO-Detection request is completed (network_id = 1).
+2020-01-08 17:30:54,693-_log-Thread-4-INFO-127.0.0.1 - - [08/Jan/2020 17:30:54] "POST /detection HTTP/1.1" 200 -
+2020-01-08 17:31:45,856-detection_post-Thread-5-INFO-Detection method with mode: 4 and Network_id: 1 requested.
+2020-01-08 17:31:51,209-detection_post-Thread-5-INFO-Detection request is completed (network_id = 1).
+2020-01-08 17:31:51,210-_log-Thread-5-INFO-127.0.0.1 - - [08/Jan/2020 17:31:51] "POST /detection HTTP/1.1" 200 -

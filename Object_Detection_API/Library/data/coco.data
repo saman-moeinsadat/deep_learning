@@ -1,0 +1,6 @@
+classes=3
+train=/home/pixray/object_detection_new/yolov3/logo/images/train.txt
+valid=/home/pixray/object_detection_new/yolov3/logo/images/val.txt
+names_1=/home/saman/python-projects/Object_Detection_API/Library/data/1.names
+backup=backup/
+

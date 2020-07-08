@@ -1,0 +1,159 @@
+---
+swagger: "2.0"
+info:
+  description: "A Prototype Api For Object Detection"
+  version: "0.0.1"
+  title: "Object Detection api(prototype)"
+  contact:
+    name: "Saman Moeinsadat"
+    email: "saman.moeinsadat@pixray.com"
+host: "api.object_detection.test"
+schemes:
+- "https"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /detection:
+    post:
+      summary: "Detection of Desired Logos."
+      description: "Returns the Coordinates and Confidance of Each Desired Logo in\
+        \ an Image."
+      operationId: "detection_post"
+      parameters:
+      - in: "body"
+        name: "requestParameters"
+        description: "# Parameters:\n  * imageData: \n    The image to be proccessed\n\
+          \  * mode: \n    The modes of proccess:\n      1. just classification. \n\
+          \      2. just detection.\n      3. classification and detection.\n    \
+          \  4. detection just if positive classification.\n  * nmsThres:\n    The\
+          \ threshold for NMS.\n  * confThres:\n    The threshold of confidence.\n"
+        required: true
+        schema:
+          $ref: "#/definitions/requestParameters"
+      responses:
+        "200":
+          description: "Network has proccessed the request successfuly."
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        "400":
+          description: "The requested process can not be done because of missing or\
+            \ corrupted image-data."
+        "500":
+          description: "An unexpected error happened."
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  thres:
+    type: "number"
+    minimum: 0
+    maximum: 1
+    exclusiveMinimum: true
+    format: "float"
+  image:
+    type: "string"
+    format: "byte"
+  differentModes:
+    type: "string"
+    enum:
+    - "1"
+    - "2"
+    - "3"
+    - "4"
+  requestParameters:
+    required:
+    - "imageData"
+    - "mode"
+    - "networkID"
+    properties:
+      nmsThres:
+        $ref: "#/definitions/thres"
+      confThres:
+        $ref: "#/definitions/thres"
+      imageData:
+        type: "array"
+        items:
+          $ref: "#/definitions/image"
+      mode:
+        $ref: "#/definitions/differentModes"
+      networkID:
+        type: "integer"
+        format: "int64"
+  inline_response_200_classification:
+    type: "object"
+    properties:
+      performed:
+        type: "boolean"
+      duration:
+        type: "integer"
+        format: "int64"
+      class:
+        type: "string"
+    description: "Returns the results of classification."
+    example:
+      duration: 0
+      performed: true
+      class: "class"
+  inline_response_200_detection:
+    type: "object"
+    properties:
+      performed:
+        type: "boolean"
+      duration:
+        type: "integer"
+        format: "int64"
+      detection_results:
+        type: "array"
+        items:
+          type: "array"
+          items:
+            type: "object"
+            properties:
+              class:
+                type: "string"
+              confidence:
+                $ref: "#/definitions/thres"
+              x:
+                type: "integer"
+                format: "int64"
+              y:
+                type: "integer"
+                format: "int64"
+              width:
+                type: "integer"
+                format: "int64"
+              height:
+                type: "integer"
+                format: "int64"
+    description: "Returns the results of detection."
+    example:
+      duration: 6
+      detection_results:
+      - - "{}"
+        - "{}"
+      - - "{}"
+        - "{}"
+      performed: true
+  inline_response_200:
+    type: "object"
+    properties:
+      query_id:
+        type: "string"
+      classification:
+        $ref: "#/definitions/inline_response_200_classification"
+      detection:
+        $ref: "#/definitions/inline_response_200_detection"
+    example:
+      detection:
+        duration: 6
+        detection_results:
+        - - "{}"
+          - "{}"
+        - - "{}"
+          - "{}"
+        performed: true
+      query_id: "query_id"
+      classification:
+        duration: 0
+        performed: true
+        class: "class"
