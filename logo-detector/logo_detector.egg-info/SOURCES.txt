@@ -1,0 +1,15 @@
+README.rst
+setup.py
+logo_detector/__init__.py
+logo_detector/config.py
+logo_detector/detector.py
+logo_detector/logodetector.py
+logo_detector/views.py
+logo_detector.egg-info/PKG-INFO
+logo_detector.egg-info/SOURCES.txt
+logo_detector.egg-info/dependency_links.txt
+logo_detector.egg-info/requires.txt
+logo_detector.egg-info/top_level.txt
+logo_detector/models/__init__.py
+logo_detector/models/model_cnn.pt
+logo_detector/models/model_resnet18.pt
